@@ -1,0 +1,34 @@
+msg_id,app_protocol,src_app,dst_app,message,timestamp
+1,HTTP,client_browser,web_server,GET /index.html HTTP/1.1,0.01
+2,HTTP,client_browser,web_server,Host: example.local,0.011
+3,HTTP,client_browser,web_server,User-Agent: ChatGPT-Project-Client/1.0,0.012
+4,HTTP,client_browser,web_server,Accept: text/html,0.013
+5,HTTP,web_server,client_browser,HTTP/1.1 200 OK,0.02
+6,HTTP,web_server,client_browser,Content-Type: text/html; charset=UTF-8,0.021
+7,HTTP,web_server,client_browser,<html><body><h1>Home</h1></body></html>,0.022
+8,HTTP,client_browser,web_server,GET /style.css HTTP/1.1,0.03
+9,HTTP,client_browser,web_server,Host: example.local,0.031
+10,HTTP,web_server,client_browser,HTTP/1.1 200 OK,0.04
+11,HTTP,web_server,client_browser,Content-Type: text/css,0.041
+12,HTTP,web_server,client_browser,body { font-family: Arial; },0.042
+13,HTTP,client_browser,web_server,GET /script.js HTTP/1.1,0.05
+14,HTTP,client_browser,web_server,Host: example.local,0.051
+15,HTTP,web_server,client_browser,HTTP/1.1 200 OK,0.06
+16,HTTP,web_server,client_browser,Content-Type: application/javascript,0.061
+17,HTTP,web_server,client_browser,console.log('Hello');,0.062
+18,HTTP,client_browser,web_server,POST /login HTTP/1.1,0.07
+19,HTTP,client_browser,web_server,Host: example.local,0.071
+20,HTTP,client_browser,web_server,Content-Type: application/x-www-form-urlencoded,0.072
+21,HTTP,client_browser,web_server,username=shir&password=1234,0.073
+22,HTTP,web_server,client_browser,HTTP/1.1 302 Found,0.08
+23,HTTP,web_server,client_browser,Location: /dashboard,0.081
+24,HTTP,client_browser,web_server,GET /dashboard HTTP/1.1,0.09
+25,HTTP,client_browser,web_server,Host: example.local,0.091
+26,HTTP,web_server,client_browser,HTTP/1.1 200 OK,0.1
+27,HTTP,web_server,client_browser,Content-Type: text/html; charset=UTF-8,0.101
+28,HTTP,web_server,client_browser,<html><body><h1>Dashboard</h1></body></html>,0.102
+29,HTTP,client_browser,web_server,GET /logout HTTP/1.1,0.11
+30,HTTP,client_browser,web_server,Host: example.local,0.111
+31,HTTP,web_server,client_browser,HTTP/1.1 200 OK,0.12
+32,HTTP,web_server,client_browser,Content-Type: text/html; charset=UTF-8,0.121
+33,HTTP,web_server,client_browser,<html><body><h1>Logged Out</h1></body></html>,0.122
