@@ -31,7 +31,7 @@ The project consists of two main components:
 
 ### 1. Packet Encapsulation Simulation
 The simulation demonstrates the encapsulation process by converting raw data into structured network packets without external internet connectivity:
-* **Data Source:** Parses application-layer payloads (HTTP-like messages) from a local `CSV` file.
+* **Data Parsing**: Extracts structured data from `group02_input.csv`, where each row represents a separate application message.
 * **Encapsulation Logic:** * **Layer 4 (Transport):** Wraps data into **TCP segments** with custom ports and control flags (e.g., `PSH`, `ACK`).
                            * **Layer 3 (Network):** Encapsulates segments into **IPv4 packets** with designated source/destination IP addresses and TTL values.
 * **Local Injection:** Uses the `Scapy` library to inject these crafted packets directly into the **Loopback Interface** (localhost).
@@ -44,6 +44,12 @@ A real-time messaging system where clients can communicate through a friendly in
 * **Unicast Messaging:** Supports targeted messaging using the format `to:client_name;message`.
 * **State Management:** Real-time updates of the active users list provided to all connected clients.
 * **Concurrency:** Uses multi-threading to handle multiple simultaneous client connections.
+* **Error Handling**: 
+    * Validates if a username is provided upon login.
+    * Notifies the sender if a target recipient is not online.
+    * Detects and alerts on invalid message formats.
+    * Gracefully manages client disconnections by updating the active user list for all remaining participants
+
 
 ---
 
@@ -64,4 +70,5 @@ Through this project, we analyzed several critical network behaviors:
 ## How to Run
 1.  Install dependencies: `pip install scapy pandas`
 2.  Run as Administrator (required for raw packet injection).
-3.  Launch the Chat Server (server.py) and then the Clients (clientGui.py) to start messaging.
+3.  Launch the Chat Server (server.py).
+4.  Launch the Clients (`clientGui.py`) to start messaging.
